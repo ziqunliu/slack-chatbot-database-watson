@@ -12,7 +12,7 @@ DB_SERVICE="$2"
 
 
 # create an IAM namespace
-ibmcloud fn namespace create slackbot --description "namespace for Slackbot tutorial"
+ibmcloud fn namespace create slackbot --description "brand info"
 
 # set the new namespace as default
 ibmcloud fn property set --namespace slackbot
@@ -24,7 +24,7 @@ ibmcloud fn package create slackdemo
 ibmcloud fn action create slackdemo/db2Setup db2-setup.js  --kind nodejs:10
 
 # bind action to Db2 credentials
-ibmcloud fn service bind $DB_SERVICE slackdemo/db2Setup  --instance eventDB
+ibmcloud fn service bind $DB_SERVICE slackdemo/db2Setup  --instance 
 
 # invoke actions to create table, then insert sample data
 ibmcloud fn action invoke slackdemo/db2Setup -p mode "[\"setup\"]" -r

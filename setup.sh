@@ -12,7 +12,7 @@ DB_SERVICE="$2"
 
 
 # create an IAM namespace
-ibmcloud fn namespace create slackbot --description "brand info"
+ibmcloud fn namespace create slackbot --description "brand information"
 
 # set the new namespace as default
 ibmcloud fn property set --namespace slackbot
